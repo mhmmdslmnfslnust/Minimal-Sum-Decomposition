@@ -26,14 +26,24 @@ Given a natural number `n`, decompose it into a sum of distinct natural numbers 
 | 6     | `1 + 2 + 3`    | Ideal case                              |
 | 7     | `1 + 2 + 4`    | `1 + 2 + 3 = 6`, so we replace `3` with `4` to reach `7` |
 
+---
+
 ## 🧠 Approach
 
-The program uses a **greedy algorithm**:
-1. Start adding natural numbers from `1` upward.
-2. Continue until the sum would exceed `n`.
-3. If there's a remaining difference, add it to the **last number** to reach the exact total while preserving uniqueness.
+The program uses a mathematically optimal approach based on the properties of triangular numbers:
 
-This ensures the maximum number is as small as possible, and all terms are distinct.
+1. Compute the largest integer `k` such that the sum of the first `k` natural numbers (`1 + 2 + ... + k`) is **greater than or equal to** `n`.
+2. Let this sum be `total = k * (k + 1) / 2`.
+3. If `total == n`, then the answer is simply all numbers from `1` to `k`.
+4. If `total > n`, compute `missing = total - n`. This is the number to **exclude** from the list `1..k` so that the final sum becomes exactly `n`.
+
+✅ This approach guarantees:
+- All summands are **distinct natural numbers**
+- Their **sum equals `n`**
+- The **maximum number used is as small as possible**
+
+---
+
 
 ## 🛠️ How to Compile and Run
 
@@ -52,9 +62,23 @@ This ensures the maximum number is as small as possible, and all terms are disti
    ```
 4. **Input a natural number and observe the output decomposition.**
 
-### 💻 Example
-Enter a natural number: 7
-Minimal sum with smallest max: 1 + 2 + 4
+### 🔁 Example
+
+**Input:** `n = 100`
+
+1. Find the largest `k` such that `k(k + 1)/2 ≥ 100`  
+   → `k = 14` because `14 × 15 / 2 = 105`
+
+2. Compute `missing = 105 - 100 = 5`  
+   → So we skip the number `5` from the sequence `1..14`
+
+**Output:**  
+`1 + 2 + 3 + 4 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 = 100`
+
+✅ All numbers are distinct  
+✅ Maximum number used is minimized  
+✅ Sum is exactly `100`
+
 
 ---
 
