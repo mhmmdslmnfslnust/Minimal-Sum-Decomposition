@@ -83,8 +83,8 @@ The program uses a mathematically optimal approach based on the properties of tr
 ---
 
 ## 📂 Files
-- sumgame.cpp: Main C++ program source code
-- README.md: Documentation for the project
+- `sumgame.cpp:` Main C++ program source code
+- `README.md:` Documentation for the project
 
 ---
 
