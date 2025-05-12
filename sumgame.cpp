@@ -1,41 +1,31 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 using namespace std;
 
-vector<int> minimalSumWithSmallestMax(int n) {
-    vector<int> result;
-    int current = 1;
-    int sum = 0;
+void minimalDistinctSummands(long long n) {
+    long long k = static_cast<long long>((sqrt(1.0 + 8.0 * n) - 1.0) / 2.0);
+    long long S = k * (k + 1) / 2;
+    long long delta = S - n;
 
-    // Step 1: Add natural numbers until we can't add next one without exceeding n
-    while (sum + current <= n) {
-        result.push_back(current);
-        sum += current;
-        current++;
+    bool first = true;
+    for (long long i = 1; i <= k; ++i) {
+        if (i == delta) continue;  // skip delta to ensure correct sum
+        if (!first) cout << " + ";
+        cout << i;
+        first = false;
     }
-
-    // Step 2: Adjust the last number if needed
-    int diff = n - sum;
-    if (diff > 0) {
-        result.back() += diff;
-    }
-
-    return result;
+    cout << "\n";
 }
 
 int main() {
-    int n;
+    long long n;
     cout << "Enter a natural number: ";
-    cin >> n;
-
-    vector<int> result = minimalSumWithSmallestMax(n);
+    if (!(cin >> n) || n <= 0) {
+        cerr << "Please enter a valid positive integer.\n";
+        return 1;
+    }
 
     cout << "Minimal sum with smallest max: ";
-    for (size_t i = 0; i < result.size(); ++i) {
-        cout << result[i];
-        if (i < result.size() - 1) cout << " + ";
-    }
-    cout << endl;
-
+    minimalDistinctSummands(n);
     return 0;
 }
