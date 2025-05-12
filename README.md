@@ -59,8 +59,8 @@ Minimal sum with smallest max: 1 + 2 + 4
 ---
 
 ## 📂 Files
-- sumgame.cpp: Main C++ program source code
-- README.md: Documentation for the project
+- `sumgame.cpp:` Main C++ program source code
+- `README.md:` Documentation for the project
 
 ---
 
