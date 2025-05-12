@@ -44,7 +44,7 @@ This ensures the maximum number is as small as possible, and all terms are disti
 1. **Clone or download** the repository.
 2. **Compile the code**:
    ```bash
-   g++ -o minimal_sum main.cpp
+   g++ -o minimal_sum sumgame.cpp
    ```
 3. **Run the executable**:
    ```bash
@@ -52,20 +52,19 @@ This ensures the maximum number is as small as possible, and all terms are disti
    ```
 4. **Input a natural number and observe the output decomposition.**
 
-💻 Example
-text
-Copy
-Edit
+### 💻 Example
 Enter a natural number: 7
 Minimal sum with smallest max: 1 + 2 + 4
-📂 Files
-minimal_sum.cpp: Main C++ program source code
 
-README.md: Documentation for the project
+---
 
-🔍 Possible Extensions
-Display result as a right-angled triangle using ASCII art.
+## 📂 Files
+- sumgame.cpp: Main C++ program source code
+- README.md: Documentation for the project
 
-Add a GUI for visualization.
+---
 
-Include unit tests for edge cases and validation.
+## 🔍 Possible Extensions
+- Display result as a right-angled triangle using ASCII art.
+- Add a GUI for visualization.
+- Include unit tests for edge cases and validation.
