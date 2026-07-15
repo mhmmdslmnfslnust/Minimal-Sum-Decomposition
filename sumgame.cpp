@@ -4,6 +4,10 @@ using namespace std;
 
 void minimalDistinctSummands(long long n) {
     long long k = static_cast<long long>((sqrt(1.0 + 8.0 * n) - 1.0) / 2.0);
+    // Ensure k is the smallest integer such that k(k+1)/2 >= n
+    while (k * (k + 1) / 2 < n) {
+        ++k;
+    }
     long long S = k * (k + 1) / 2;
     long long delta = S - n;
 

@@ -66,7 +66,7 @@ The program uses a mathematically optimal approach based on the properties of tr
 
 **Input:** `n = 100`
 
-1. Find the largest `k` such that `k(k + 1)/2 ≥ 100`  
+1. Find the smallest `k` such that `k(k + 1)/2 ≥ 100`  
    → `k = 14` because `14 × 15 / 2 = 105`
 
 2. Compute `missing = 105 - 100 = 5`  
